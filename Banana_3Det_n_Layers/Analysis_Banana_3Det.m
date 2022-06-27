@@ -74,30 +74,7 @@ imagesc(Bound.r,Bound.z,log10(Tissue.S_Map))                                    
 
 colormap jet
 
-hold on
 
-% Down code is for creating the ellipse in the banana trajectory plot
-        
-b = 0.5*16e-3;                                                             % Major axis of ellipse                                           
-a = 0.5*3e-3;                                                              % Minor axis of ellipse    
-
-T = 0:pi/180:2*pi;                                                         % Sampling the theta of ellipse
-%
-r = a*b./sqrt(a^2*sin(T).*sin(T) + b^2*cos(T).*cos(T));                    % Calculating the r for ellipse (the equation is in polar form)      
-
-x = 15e-3+r.*cos(T);                                                       % shift the ellipse 15 mm in x 
-y = 14e-3+r.*sin(T);                                                       % shift the ellipse 14 mm in y
-
-            
-figure(14)   
-fill(x*1e3,y*1e3,'k','FaceColor','r','FaceAlpha',0.2,'EdgeAlpha',0 )       % Plot the ellipse
-
-xlim([0 45])
-ylim([0 25])                                                                      % Limit the x and y axis
-% zlim([-9.5 9.5])
-
-ax = gca;
-ax.YDir = 'reverse';
 
 
 
